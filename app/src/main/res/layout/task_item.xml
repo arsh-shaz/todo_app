@@ -29,6 +29,25 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/updateButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="36dp"
+                android:src="@drawable/baseline_edit_24"
+                app:tint = "@color/purple"
+                />
+
+            <ImageView
+                android:id="@+id/deleteButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/baseline_delete_24"
+                app:tint = "@color/red"
+                />
+
         </RelativeLayout>
 
         <TextView
@@ -44,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="16dp">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/priorityChipView"
@@ -77,7 +96,6 @@
                 app:chipIconSize="20dp"
                 app:chipCornerRadius="20dp"
                 />
-
 
         </LinearLayout>
 

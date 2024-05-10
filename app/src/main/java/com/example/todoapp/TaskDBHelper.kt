@@ -63,4 +63,35 @@ class TaskDBHelper(context: Context) :
         db.close()
         return taskList
     }
+
+    fun updateTask(task: Task){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_TITLE, task.title)
+            put(COLUMN_CONTENT, task.content)
+            put(COLUMN_PRIORITY, task.priority)
+            put(COLUMN_DEADLINE, task.deadline)
+        }
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(task.id.toString())
+        db.update(TABLE_NAME, values,whereClause, whereArgs)
+        db.close()
+    }
+
+    fun getTaskByID(taskId: Int): Task{
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $taskId"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
+        val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
+        val priority = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRIORITY))
+        val deadline = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DEADLINE))
+
+        cursor.close()
+        db.close()
+        return Task(id, title,content, priority, deadline)
+    }
 }
