@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TodoApp</string>
+    <string name="addButton">Used to add new tasks</string>
 </resources>

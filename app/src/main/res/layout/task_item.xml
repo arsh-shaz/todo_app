@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Title"
+                android:textColor="@color/purple"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Content"
+            android:fontFamily="@font/poppins"
+            android:maxLines="3"
+            android:layout_marginTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/priorityChipView"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="Priority"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/purple"
+                app:chipStrokeWidth="0dp"
+                app:chipCornerRadius="30dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/dateChipView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                app:chipStrokeWidth="1dp"
+                app:chipStrokeColor="@color/purple"
+                app:chipIcon="@drawable/baseline_calendar_month_24"
+                app:chipIconTint="@color/purple"
+                app:chipBackgroundColor="@color/white"
+                app:chipIconSize="20dp"
+                app:chipCornerRadius="20dp"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
