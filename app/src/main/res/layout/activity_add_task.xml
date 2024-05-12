@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".AddTaskActivity">
+    tools:context=".AddTaskActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/addTaskHeading"
@@ -47,7 +48,7 @@
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="260dp"
         android:layout_below="@+id/titleEditText"
         android:layout_marginTop="20dp"
         android:background="@drawable/purple_border"
